@@ -150,3 +150,6 @@ def search(request):
 
 def about(request):
     return render(request, 'Blog/about.html')
+
+def contact(request):
+    return render(request, 'Blog/contact.html')
