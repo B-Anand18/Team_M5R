@@ -42,12 +42,19 @@
 
         <div class="buttons">
             {% if request.user == user %}
-            <a class="logout-btn" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt profile-icon"></i>Logout
-            </a><br>
-            <a class="edit-profile-btn" href="{% url 'profile_edit' %}"><i class="fas fa-pen profile-icon"></i>Edit
-                Profile </a>
-            <a class="new-post" href="{% url 'new_post' %}"><button style="top:150px">New Post</button></a>
-            {% endif %}
+            <a class="logout-btn" href="{% url 'logout' %}">
+                <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+                <lord-icon src="https://cdn.lordicon.com/twopqjaj.json" trigger="hover" style="width:50px;height:50px">
+                </lord-icon><b>LogOut</b><br>
+                <a class="edit-profile-btn" href="{% url 'profile_edit' %}">
+                    <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/alzqexpi.json" trigger="hover"
+                        style="width:50px;height:50px">
+                    </lord-icon><b>Edit
+                        Profile</b>
+                </a>
+                <a class="new-post" href="{% url 'new_post' %}"><button style="top:150px">New Post</button></a>
+                {% endif %}
         </div> <!-- end buttons -->
 
     </div> <!-- end profile-head -->
