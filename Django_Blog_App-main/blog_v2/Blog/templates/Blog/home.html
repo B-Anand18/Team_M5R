@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'Blog/css/home_index.css' %}">
     <title>tmkc</title>
 </head>
+
 <body>
     <div class="header">
         <div class="gray-shade">
@@ -16,6 +18,7 @@
                 <div class="nav-list">
                     <a class="nav-item" href="{% url 'home' %}">HOME</a>
                     <a class="nav-item" href="#">ABOUT</a>
+                    <a class="nav-item" href="\admin">Admin</a>
                     <a class="nav-item" href="#">CONTACT US</a>
                 </div>
                 <div class="profile"><a href="{% url 'login' %}"><i class="fas fa-user"></i></a></div>
@@ -31,16 +34,16 @@
 
 
     <div class="sub-nav">
-    <div class="sort">
-        <a class= {{latest}} href="{% url 'home' %}">Latest Articles</a>
-        <a class= {{popular}} href="{% url 'home' 'popular' %}">Most popular Articles</a>
-    </div>
-    
+        <div class="sort">
+            <a class={{latest}} href="{% url 'home' %}">Latest Articles</a>
+            <a class={{popular}} href="{% url 'home' 'popular' %}">Most popular Articles</a>
+        </div>
+
         <a id="cat-btn" class="category-btn">Categories ></a>
         <div id="cat-list" class="cats">
-            <a class="menu-item" href="{% url 'category' 'Travel' %}">TRAVEL</a> 
-            <a class="menu-item" href="{% url 'category' 'Entertainment' %}">ENTERTAINMENT</a> 
-            <a class="menu-item" href="{% url 'category' 'Technology' %}">TECNOLOGY</a> 
+            <a class="menu-item" href="{% url 'category' 'Travel' %}">TRAVEL</a>
+            <a class="menu-item" href="{% url 'category' 'Entertainment' %}">ENTERTAINMENT</a>
+            <a class="menu-item" href="{% url 'category' 'Technology' %}">TECNOLOGY</a>
             <a class="menu-item" href="{% url 'category' 'Climate Change' %}">CLIMATE CHANGE</a>
             <a class="menu-item" href="{% url 'category' 'Fashion' %}">FASHION</a>
             <a class="menu-item" href="{% url 'category' 'Health' %}">HEALTH</a>
@@ -50,51 +53,51 @@
         <div class="search">
             <form action="{% url 'search' %}" method="post">
                 {% csrf_token %}
-            <input name="word" type="text" id="bar" class="search-bar" placeholder="Search posts ...">
+                <input name="word" type="text" id="bar" class="search-bar" placeholder="Search posts ...">
             </form>
-           <div class="search-icon" id="icon" ><i  class="fas fa-search"></i></div>
+            <div class="search-icon" id="icon"><i class="fas fa-search"></i></div>
         </div>
-        
+
     </div>
 
 
-    <div class="contant">        
+    <div class="contant">
         <div class="posts" id="posts">
             {% if page_obj.object_list %}
             {% for post in page_obj.object_list %}
             <div class="post-section">
                 <a class="post-link" href="{% url 'view_post' post.id %}">
-                <img class="post-image-home" src="{{post.image.url}}">
-                <div class="date-cat">
-                    <small>{{post.category}}</small>
-                    <small>{{post.date | date:'M d, Y'}}</small>
-                </div>
-                
-                <p class="title-home">{{post.title}}</p>
-                <div class="post-body-home">
-                    <p>{{post.body | safe}}</p>
-                </div>
-                </a>    
+                    <img class="post-image-home" src="{{post.image.url}}">
+                    <div class="date-cat">
+                        <small>{{post.category}}</small>
+                        <small>{{post.date | date:'M d, Y'}}</small>
+                    </div>
+
+                    <p class="title-home">{{post.title}}</p>
+                    <div class="post-body-home">
+                        <p>{{post.body | safe}}</p>
+                    </div>
+                </a>
             </div>
-    {% endfor %}
+            {% endfor %}
         </div>
         <div class="paggination">
-            {%if page_obj.has_previous %} 
-                <a class="page-change-btn" href="?page={{page_obj.previous_page_number}}">Previous page </a> 
+            {%if page_obj.has_previous %}
+            <a class="page-change-btn" href="?page={{page_obj.previous_page_number}}">Previous page </a>
             {% endif %}
-            <span class="page-num" >{{page_obj.number}}</span>
-            
-            {%if page_obj.has_next %} 
-                <a class="page-change-btn" href="?page={{page_obj.next_page_number}}">Next page </a> 
+            <span class="page-num">{{page_obj.number}}</span>
+
+            {%if page_obj.has_next %}
+            <a class="page-change-btn" href="?page={{page_obj.next_page_number}}">Next page </a>
             {% endif %}
         </div>
 
         {% else %}
 
         <h3>No posts yet! Add one <a href="{% url 'new_post' %}">Add new post</a></h3>
-        
+
         {% endif %}
-    </div>   
+    </div>
 
 
 
@@ -102,20 +105,16 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-        const icon = document.getElementById('icon')
-        const bar = document.getElementById('bar')
+            const icon = document.getElementById('icon')
+            const bar = document.getElementById('bar')
 
-        icon.addEventListener('click', () => {
-            bar.classList.toggle('show')
+            icon.addEventListener('click', () => {
+                bar.classList.toggle('show')
+            })
         })
- })
     </script>
-    
-    <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>   
+
+    <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
 </body>
+
 </html>
-
-
-
-
-
