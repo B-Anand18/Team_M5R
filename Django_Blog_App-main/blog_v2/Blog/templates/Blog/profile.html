@@ -1,0 +1,92 @@
+{% extends "Blog/index.html" %}
+{% load static %}
+
+{% block title %}<title>profile | {{user}} </title>{% endblock %}
+
+{% block style %}<link rel="stylesheet" href="{% static 'Blog/css/profile.css' %}">{% endblock %}
+
+
+{% block contact %}
+
+<div class="contant">
+        <div class="profile-head">
+            {% if user.profile.profile_pic  %}
+            <img class="profile-img" src="{{user.profile.profile_pic.url}}" alt="">
+            {% else %}
+            <img class="profile-img" src="/media/uplodes/profiles/default-profile-pic.jpg" alt="">
+            {% endif %}
+            
+            <div class="user-info">
+                <p class="name">{{user.first_name}} {{user.last_name}}</p>
+                <small>@{{user.username}}</small>
+                <small>joined {{user.date_joined | date:'M Y'}}</small>
+                <p class="bio">{{user.profile.bio}}</p>
+                {% if user.profile.instagram_url  %}
+                <a href="{{user.profile.instagram_url}}"><i class="fab fa-instagram"></i></a>
+                {% endif %}
+
+                {% if user.profile.twitter_url  %}
+                <a href="{{user.profile.twitter_url}}"><i class="fab fa-twitter"></i></a>
+                {% endif %}
+
+                {% if user.profile.website_url  %}
+                <a href="{{user.profile.website_url}}"><i class="fa fa-globe"></i></a>
+                {% endif %}
+
+                {% if user.profile.linkedin_url  %}
+                <a href="{{user.profile.linkedin_url}}"><i class="fab fa-linkedin"></i></a>
+                {% endif %}
+              
+            </div> <!-- end user-info -->
+
+            <div class="buttons">
+                {% if request.user == user %}
+                <a class="logout-btn" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt profile-icon"></i>Logout </a><br>
+                <a class="edit-profile-btn" href="{% url 'profile_edit' %}"><i class="fas fa-pen profile-icon"></i>edit profile </a>
+                <a class="new-post" href="{% url 'new_post' %}"><button >New Post</button></a>
+                {% endif %}
+            </div> <!-- end buttons -->
+                        
+</div> <!-- end profile-head -->
+        
+            
+{% if page_obj %}
+    <h3 class="posts-top-text">posts</h3>
+        <div class="posts" id="posts">
+        {% for post in page_obj.object_list %}
+            <div class="post-section">
+                    <a class="post-link" href="{% url 'view_post' post.id %}">
+                    <img class="post-image-home" src="{{post.image.url}}">
+                    <div class="date-cat">
+                        <small>{{post.category}}</small>
+                        <small>{{post.date | date:'M d, Y'}}</small>
+                    </div>
+                        
+                    <p class="title-home">{{post.title}}</p>
+                    <div class="post-body-home">
+                        <p>{{post.body | safe}}</p>
+                    </div>
+                    </a>        
+            </div>
+            {% endfor %}
+        </div> 
+        <div class="paggination">
+            {%if page_obj.has_previous %} 
+                <a class="page-change-btn" href="?page={{page_obj.previous_page_number}}">Previous page </a> 
+            {% endif %}
+            <span class="page-num" >{{page_obj.number}}</span>
+            
+            {%if page_obj.has_next %} 
+                <a class="page-change-btn" href="?page={{page_obj.next_page_number}}">Next page </a> 
+            {% endif %}
+        </div>
+            
+
+
+{% else %}
+<p>No posts yet</p>
+{% endif %}
+
+
+</div>  
+{% endblock %}

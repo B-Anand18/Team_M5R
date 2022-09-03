@@ -1,0 +1,157 @@
+.profile-head {
+    display: flex;
+    width: 95%;
+    margin: 3rem auto; 
+    justify-content: space-between;
+}
+
+.profile-img {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    margin-top: 1rem;
+}
+
+.user-info {
+    width: 70%;
+
+}
+
+.name {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.user-info small {
+    color: #5c5c5c;
+    margin-right: 0.5rem;
+}
+
+.bio {
+    width: 80%;
+    color: #353535;
+    max-width: 100%;
+}
+
+.fa-instagram {
+    color: #cd0a82;
+    font-size: 1rem;
+    margin-right: 0.4rem;
+}
+
+.fa-twitter{
+    color: #0a68a7;
+    font-size: 1rem;
+    margin-right: 0.4rem;
+}
+
+.fa-linkedin {
+    color: #2e25a1;
+    font-size: 1rem;
+}
+
+.fa-globe {
+    color: #8f8f8f;
+    font-size: 1rem;
+    margin-right: 0.4rem;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    position: relative;
+
+}
+
+.logout-btn,
+.edit-profile-btn {
+    color: #3a3a3b;
+    text-decoration: none ;
+}
+
+.profile-icon {
+    color: #7c7c7c;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+
+
+.new-post {
+    margin-right: 3%;
+    height: auto;
+    margin-top: 1%;
+}
+
+.new-post button {
+    width: 7.5rem;
+    height: 2.5rem;
+    text-decoration: none;
+    color: #353535;
+    font-size: 1.1rem;
+    font-weight: 300;
+    border: #757575 0.05rem solid;
+    border-radius: 5px;
+    background-color: #f7f7f7d2;
+    cursor: pointer;
+    padding: 0.2rem;
+    position: absolute;
+    bottom: 4rem;
+}
+
+.new-post button:hover {
+    background-color: #464545dc;
+    color: white;
+}
+
+.posts-top-text {
+    margin-left: 3%;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+
+/* 
+---------------------------------------------------------------------------------------------
+*/
+
+
+@media screen and (max-width: 860px){
+    .profile-head {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        
+    }
+    
+    .user-info {
+        width: 50%;
+    }
+    
+    .name {
+        font-size: 1.5rem;
+    }
+    
+    .bio {
+        width: 95%;
+    }
+
+    .buttons {
+        display: inline-block;
+        width: 40%;
+    
+    }
+    
+    .new-post button {
+        width: 8rem;
+        font-size: 0.8rem;
+        margin-top: 1rem;
+        bottom: 0;
+        position: relative;
+    }
+
+}

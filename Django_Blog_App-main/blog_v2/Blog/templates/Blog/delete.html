@@ -1,0 +1,25 @@
+{% extends "Blog/index.html" %}
+{% load static %}
+
+
+{% block title %}<title>Confirm Delete post</title>{% endblock %}
+
+{% block style %}<link rel="stylesheet" href="{% static 'Blog/css/post-forms.css' %}">{% endblock %}
+
+
+{% block contact %}
+<div class="contant">
+    <div class="delete">
+        <h2>Are you sure you want to delete "{{post}}" ?</h2>
+    <div class="btns">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input class=" btn confirm-btn" type="submit" value="Confirm">
+            </form>
+            <a href="{% url 'home' %}" ><button class="btn cancle-btn">cancel</button></a>
+        </div>
+    
+    </div>
+
+</div>
+{% endblock %}
