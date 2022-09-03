@@ -146,7 +146,7 @@ JAZZMIN_SETTINGS = {
     "site_brand": "a",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo": "books/img/logo.png",
+    "site_logo": "C:\Users\b anand\Documents\GitHub\Team_M5R\Django_Blog_App-main\blog_v2\Blog\static\Blog\images\ineuron.png",
 
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
     "login_logo": None,

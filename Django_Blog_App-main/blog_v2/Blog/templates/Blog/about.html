@@ -6,7 +6,7 @@
 
 {% block style %}
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-<link rel="stylesheet" href="{% static 'Blog/css/about.css' %}">
+<link rel="stylesheet" href="{% static 'Blog/css/about.css' %}" >
 
 
 
@@ -45,7 +45,10 @@
             </div>
         </div>
         <div class="image-section">
-            <img src="image/img one.jpg">
+            {% comment %} <img src="image/img one.jpg"> {% endcomment %}
+            {% comment %} <img src="{static'C:\Users\b anand\Documents\GitHub\Team_M5R\Django_Blog_App-main\blog_v2\Blog\templates\Blog\about_us.jpeg'%}"  alt="Working"> {% endcomment %}
+            
+
         </div>
     </div>
 </div>
