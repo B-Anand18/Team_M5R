@@ -3,33 +3,34 @@
 
 {% block title %}<title>Sign Up</title>{% endblock %}
 
-{% block style %}<link rel="stylesheet" href="{% static 'Blog/css/user_forms.css' %}">{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'Blog/css/user_forms.css' %}">{% endblock %}
 
 
 {% block contact %}
 
 <div class="box-signup">
     <p>Join us Today</p>
-<form action="" method="POST">
-    {% csrf_token %}
-  
-    <div class="form-group">
-        {{form.username}}
-        {{form.first_name}}
-        {{form.email}}
-        {{form.password1}}
-        {{form.password2}}
+    <form action="" method="POST">
+        {% csrf_token %}
 
-        <div class="errors-signup">
-          {{form.errors}}
+        <div class="form-group">
+            {{form.username}}
+            {{form.first_name}}
+            {{form.email}}
+            {{form.password1}}
+            {{form.password2}}
+
+            <div class="errors-signup">
+                {{form.errors}}
+            </div>
+
+            <button class="btn" type="submit">Sign Up</button>
+
         </div>
-            
-        <button class="btn" type="submit">Sign Up</button>
 
-    </div>
-    
-</form>
-<small>Already Have an account? <a href="{% url 'login' %}">Log in</a></small>
+    </form>
+    <b><small>Already Have an account? <a href="{% url 'login' %}">Log in</a></small></b>
 </div>
 
 
@@ -42,15 +43,10 @@
     form_fields[4].placeholder = 'password';
     form_fields[5].placeholder = 'Confrim password';
 
-    for(var field in form_fields){
+    for (var field in form_fields) {
         form_fields[field].className += 'form-field'
     }
-    
+
 </script>
 
 {% endblock %}
-
-
-
-
-

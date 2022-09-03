@@ -1,7 +1,7 @@
 .profile-head {
     display: flex;
     width: 95%;
-    margin: 3rem auto; 
+    margin: 3rem auto;
     justify-content: space-between;
 }
 
@@ -40,7 +40,7 @@
     margin-right: 0.4rem;
 }
 
-.fa-twitter{
+.fa-twitter {
     color: #0a68a7;
     font-size: 1rem;
     margin-right: 0.4rem;
@@ -68,7 +68,7 @@
 .logout-btn,
 .edit-profile-btn {
     color: #3a3a3b;
-    text-decoration: none ;
+    text-decoration: none;
 }
 
 .profile-icon {
@@ -89,10 +89,10 @@
     width: 7.5rem;
     height: 2.5rem;
     text-decoration: none;
-    color: #353535;
+    color: #179733;
     font-size: 1.1rem;
     font-weight: 300;
-    border: #757575 0.05rem solid;
+    border: #026813 0.05rem solid;
     border-radius: 5px;
     background-color: #f7f7f7d2;
     cursor: pointer;
@@ -102,8 +102,8 @@
 }
 
 .new-post button:hover {
-    background-color: #464545dc;
-    color: white;
+    background-color: #5de059dc;
+    color: rgb(255, 255, 255);
 }
 
 .posts-top-text {
@@ -118,24 +118,24 @@
 */
 
 
-@media screen and (max-width: 860px){
+@media screen and (max-width: 860px) {
     .profile-head {
         display: flex;
         justify-content: space-between;
         width: 90%;
         margin: 0 auto;
         flex-wrap: wrap;
-        
+
     }
-    
+
     .user-info {
         width: 50%;
     }
-    
+
     .name {
         font-size: 1.5rem;
     }
-    
+
     .bio {
         width: 95%;
     }
@@ -143,9 +143,9 @@
     .buttons {
         display: inline-block;
         width: 40%;
-    
+
     }
-    
+
     .new-post button {
         width: 8rem;
         font-size: 0.8rem;
