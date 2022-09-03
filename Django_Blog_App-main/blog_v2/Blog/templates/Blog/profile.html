@@ -43,7 +43,7 @@
                 {% if request.user == user %}
                 <a class="logout-btn" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt profile-icon"></i>Logout </a><br>
                 <a class="edit-profile-btn" href="{% url 'profile_edit' %}"><i class="fas fa-pen profile-icon"></i>edit profile </a>
-                <a class="new-post" href="{% url 'new_post' %}"><button >New Post</button></a>
+                <a class="new-post" href="{% url 'new_post' %}"><button style="top:150px" >New Post</button></a>
                 {% endif %}
             </div> <!-- end buttons -->
                         
