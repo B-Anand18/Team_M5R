@@ -5,6 +5,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body{
+    background-color: cyan;
+}
+
 .section {
     width: 100%;
     min-height: 100vh;
