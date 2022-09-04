@@ -46,22 +46,22 @@ A Django blogging app It has [features](#features) of a standard blogging platfo
 
 * ### Main Page
 
-![alt text](https://github.com/roxana-hgh/Django_Blog_App/blob/2f8698c2f9186b9b17df8402ace67f57430adb40/Screenshots/main_page.png)
+![alt text](https://github.com/B-Anand18/Team_M5R/blob/main/Django_Blog_App-main/Screenshots/project.png)
 
 
-* ### Post Details
+* ### Log IN 
 
-![alt text](https://github.com/roxana-hgh/Django_Blog_App/blob/2f8698c2f9186b9b17df8402ace67f57430adb40/Screenshots/page_detail.png)
+![alt text](https://github.com/B-Anand18/Team_M5R/blob/main/Django_Blog_App-main/Screenshots/project5.png)
 
 
-* ### User Profile
+* ### Sign Up
 
-![alt text](https://github.com/roxana-hgh/Django_Blog_App/blob/2f8698c2f9186b9b17df8402ace67f57430adb40/Screenshots/profile_page.png)
+![alt text](https://github.com/B-Anand18/Team_M5R/blob/main/Django_Blog_App-main/Screenshots/project6.png)
 
 
 * ### Profile information Editing
 
-![alt text](https://github.com/roxana-hgh/Django_Blog_App/blob/2f8698c2f9186b9b17df8402ace67f57430adb40/Screenshots/profile_editting.png)
+![alt text](https://github.com/B-Anand18/Team_M5R/blob/main/Django_Blog_App-main/Screenshots/project7.png)
 
 
 * ### Add new post
